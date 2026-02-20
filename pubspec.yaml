@@ -1,0 +1,19 @@
+name: voice_translator_pro
+description: "A new Flutter project."
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.10.7
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+  speech_to_text: ^7.3.0
+  flutter_tts: ^3.8.0
+  http: ^1.2.0
+  firebase_core: ^2.30.0
+  cloud_functions: ^4.6.0
+  # firebase_app_check: ^0.2.2

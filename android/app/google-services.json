@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "772506474029",
+    "project_id": "translator-40cf4",
+    "storage_bucket": "translator-40cf4.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:772506474029:android:c1359ee128720aa8d2caa4",
+        "android_client_info": {
+          "package_name": "com.example.voice_translator_pro"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAe9cxmk3vpALrxwe2ofQ3WusYyHF_9eVQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
