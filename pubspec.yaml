@@ -16,4 +16,5 @@ dependencies:
   http: ^1.2.0
   firebase_core: ^2.30.0
   cloud_functions: ^4.6.0
+  flutter_dotenv: ^6.0.0
   # firebase_app_check: ^0.2.2

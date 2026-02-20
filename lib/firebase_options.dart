@@ -3,6 +3,7 @@
 import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 /// Default [FirebaseOptions] for use with your Firebase apps.
 ///
@@ -16,18 +17,11 @@ import 'package:flutter/foundation.dart'
 /// ```
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
-    if (kIsWeb) {
-      return web;
-    }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
         return ios;
-      case TargetPlatform.macOS:
-        return macos;
-      case TargetPlatform.windows:
-        return windows;
       case TargetPlatform.linux:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
@@ -39,26 +33,16 @@ class DefaultFirebaseOptions {
         );
     }
   }
-
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyDlG9Kmfj7SxpDFLTq3ExdkKNYXVkFWuKI',
-    appId: '1:772506474029:web:4f1868ee3de80c76d2caa4',
-    messagingSenderId: '772506474029',
-    projectId: 'translator-40cf4',
-    authDomain: 'translator-40cf4.firebaseapp.com',
-    storageBucket: 'translator-40cf4.firebasestorage.app',
-  );
-
-  static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyAe9cxmk3vpALrxwe2ofQ3WusYyHF_9eVQ',
+  static final FirebaseOptions android = FirebaseOptions(
+    apiKey: dotenv.env['FIREBASE_API_KEY'] ?? '',
     appId: '1:772506474029:android:c1359ee128720aa8d2caa4',
     messagingSenderId: '772506474029',
     projectId: 'translator-40cf4',
     storageBucket: 'translator-40cf4.firebasestorage.app',
   );
 
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCqwvWlFQfmihEzRBLAZeDxFjMoTOvm5yA',
+  static final FirebaseOptions ios = FirebaseOptions(
+    apiKey: dotenv.env['FIREBASE_API_KEY_IOS'] ?? '',
     appId: '1:772506474029:ios:d01b6696874c7a25d2caa4',
     messagingSenderId: '772506474029',
     projectId: 'translator-40cf4',
@@ -66,21 +50,4 @@ class DefaultFirebaseOptions {
     iosBundleId: 'com.example.voiceTranslatorPro',
   );
 
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyCqwvWlFQfmihEzRBLAZeDxFjMoTOvm5yA',
-    appId: '1:772506474029:ios:d01b6696874c7a25d2caa4',
-    messagingSenderId: '772506474029',
-    projectId: 'translator-40cf4',
-    storageBucket: 'translator-40cf4.firebasestorage.app',
-    iosBundleId: 'com.example.voiceTranslatorPro',
-  );
-
-  static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyDlG9Kmfj7SxpDFLTq3ExdkKNYXVkFWuKI',
-    appId: '1:772506474029:web:a24471d2699241f8d2caa4',
-    messagingSenderId: '772506474029',
-    projectId: 'translator-40cf4',
-    authDomain: 'translator-40cf4.firebaseapp.com',
-    storageBucket: 'translator-40cf4.firebasestorage.app',
-  );
 }
